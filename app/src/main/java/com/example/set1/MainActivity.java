@@ -1,5 +1,6 @@
 package com.example.set1;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     EditText editName;
     Button buttonWitaj;
+    Button gameButton;
     TextView textResult;
 
     @Override
@@ -36,11 +38,12 @@ public class MainActivity extends AppCompatActivity {
         editName = findViewById(R.id.textInput);
         buttonWitaj = findViewById(R.id.welcomeButton);
         textResult = findViewById(R.id.welcomeText);
+        gameButton = findViewById(R.id.gameButton);
+
 
         buttonWitaj.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 String name = editName.getText().toString().trim();
 
                 if (!name.isEmpty()) {
@@ -49,6 +52,14 @@ public class MainActivity extends AppCompatActivity {
                     textResult.setText("Przedstaw się.");
                 }
 
+            }
+        });
+
+        gameButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, GuessingGameActivity.class);
+                startActivity(intent);
             }
         });
     }
