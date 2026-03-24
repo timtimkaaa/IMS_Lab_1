@@ -13,6 +13,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+
+//Tsimafei Mardashou, 46011, Lab 3
+
 public class GuessingGameActivity extends AppCompatActivity {
 
     EditText guessInput;
